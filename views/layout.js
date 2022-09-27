@@ -47,10 +47,10 @@ module.exports = ({ content }) => {
                 <div class="navbar-item">
                   <div class="navbar-buttons">
                     <div class="navbar-item">
-                      <a href="/"><i class="fa fa-star"></i> Products</a>
+                      <a href="/.netlify/functions/index/"><i class="fa fa-star"></i> Products</a>
                     </div>
                     <div class="navbar-item">
-                      <a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a>
+                      <a href="/.netlify/functions/index/cart"><i class="fa fa-shopping-cart"></i> Cart</a>
                     </div>
                   </div>
                 </div>

@@ -30,7 +30,7 @@ module.exports = ({ req, errors }) => {
               </div>
               <button class="button is-primary">Submit</button>
             </form>
-            <a href="/signin">Have an account? Sign In</a>
+            <a href="/.netlify/functions/index/signin">Have an account? Sign In</a>
           </div>
         </div>
       </div>

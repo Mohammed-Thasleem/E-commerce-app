@@ -1,5 +1,4 @@
 const express = require('express');
-const carts = require('../repositories/carts');
 const cartsRepo = require('../repositories/carts');
 const productsRepo = require('../repositories/products');
 const cartShowTemplate = require('../views/carts/show');
@@ -33,13 +32,13 @@ router.post('/cart/products', async (req, res) => {
     items: cart.items
   });
 
-  res.redirect('/cart');
+  res.redirect('/.netlify/functions/index/cart');
 });
 
 // Receive a GET request to show all items in cart
 router.get('/cart', async (req, res) => {
   if (!req.session.cartId) {
-    return res.redirect('/');
+    return res.redirect('/.netlify/functions/index/');
   }
 
   const cart = await cartsRepo.getOne(req.session.cartId);
@@ -55,6 +54,7 @@ router.get('/cart', async (req, res) => {
 
 // Receive a post request to delete an item from a cart
 router.post('/cart/products/delete', async (req, res) => {
+  
     const { itemId } = req.body;
     const cart = await cartsRepo.getOne(req.session.cartId);
 
@@ -62,7 +62,7 @@ router.post('/cart/products/delete', async (req, res) => {
 
     await cartsRepo.update(req.session.cartId, { items });
 
-    res.redirect('/cart');
+    res.redirect('/.netlify/functions/index/cart');
 })
 
 module.exports = router;

@@ -31,7 +31,7 @@ router.post(
     const { title, price } = req.body;
     await productsRepo.create({ title, price, image });
 
-    res.redirect('/admin/products');
+    res.redirect('/.netlify/functions/index/admin/products');
   }
 );
 
@@ -67,14 +67,14 @@ router.post(
       return res.send('Could not find item');
     }
 
-    res.redirect('/admin/products');
+    res.redirect('/.netlify/functions/index/admin/products');
   }
 );
 
 router.post('/admin/products/:id/delete', requireAuth, async (req, res) => {
   await productsRepo.delete(req.params.id);
 
-  res.redirect('/admin/products');
+  res.redirect('/.netlify/functions/index/admin/products');
 });
 
 module.exports = router;

@@ -28,7 +28,7 @@ router.post(
 
     req.session.userId = user.id;
 
-    res.redirect('/admin/products');
+    res.redirect('/.netlify/functions/index/admin/products');
   }
 );
 
@@ -52,7 +52,7 @@ router.post(
 
     req.session.userId = user.id;
 
-    res.redirect('/admin/products');
+    res.redirect('/.netlify/functions/index/admin/products');
   }
 );
 
