@@ -24,7 +24,7 @@ app.use(`/.netlify/functions/index`, productsRouter);
 app.use(`/.netlify/functions/index`, adminProductsRouter);
 app.use(`/.netlify/functions/index`, cartsRouter);
 
-const port = process.env.PORT || 3006;
+const port = process.env.PORT || 4002;
 
 app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
 
